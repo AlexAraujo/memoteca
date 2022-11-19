@@ -1,3 +1,4 @@
+import { PensamentoModel } from './../../../interface/pensamentos';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -5,9 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './pensamento.component.html',
   styleUrls: ['./pensamento.component.scss']
 })
+
 export class PensamentoComponent implements OnInit {
 
-  @Input() pensamento = {
+  @Input() pensamento: PensamentoModel = {
+    id: 1,
     conteudo: 'I love sugger',
     autoria: 'gaymer',
     modelo: 'modelo3'
@@ -16,6 +19,10 @@ export class PensamentoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public larguraPensamento(): string {
+    return this.pensamento.conteudo.length >= 256 ? 'pensamento-g' : '';
   }
 
 }

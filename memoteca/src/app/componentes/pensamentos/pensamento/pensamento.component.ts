@@ -13,7 +13,8 @@ export class PensamentoComponent implements OnInit {
     id: 1,
     conteudo: 'I love sugger',
     autoria: 'gaymer',
-    modelo: 'modelo3'
+    modelo: 'modelo3',
+    favorito: false
   }
 
   constructor() { }

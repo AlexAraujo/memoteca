@@ -1,5 +1,6 @@
 import { PensamentoService } from './../pensamento.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { PensamentoModel } from 'src/app/interface/pensamentos';
 
@@ -14,15 +15,18 @@ export class CriarPensamentoComponent implements OnInit {
   pensamento: PensamentoModel = {
     conteudo: '',
     autoria: '',
-    modelo: 'modelo1'
+    modelo: 'modelo1',
+    favorito: false
   }
 
   constructor(
     private _pensamentoService: PensamentoService,
-    private _router: Router
+    private _router: Router,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
+
   }
 
   public criarPensamento(): void {
